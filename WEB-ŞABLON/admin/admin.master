@@ -1,0 +1,276 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Çelbira | TETRA YAZILIM |YÖNETİM PANELİ</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Çelbira | YÖNETİM PANELİ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Çelbira.png | TETRA YAZILIM | YÖNETİM PANELİ">
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico">
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="css.css?family=Poppins:300,400,500,600,700">
+    <!--end::Fonts-->
+    <!--begin::Page Vendor Stylesheets(used by this page)-->
+    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+    <link href="assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css">
+    <!--end::Page Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="assets/plugins/global/plugins.dark.bundle.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.dark.bundle.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="kt_body" class="dark-mode header-fixed header-tablet-and-mobile-fixed">
+    <form id="form1" runat="server">
+        <!--begin::Root-->
+        <div class="d-flex flex-column flex-root">
+            <!--begin::Page-->
+            <div class="page d-flex flex-row flex-column-fluid">
+                <!--begin::Wrapper-->
+                <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                    <!--begin::Header-->
+                    <div id="kt_header" class="header">
+                        <!--begin::Container-->
+                        <div class="container-fluid d-flex flex-stack">
+                            <!--begin::Brand-->
+                            <!--begin::Aside toggle-->
+                            <div class="d-lg-none btn btn-icon btn-active-color-white w-30px h-30px ms-n2 me-3" id="kt_aside_toggle">
+                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                                        <path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="currentColor"></path>
+                                        <path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                            </div>
+                            <!--end::Aside  toggle-->
+                            <!--begin::Logo-->
+                            <a href="Default.aspx"></a>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="Default.aspx">
+                                        <img alt="Logo" src="images/Tetra.png" class="h-45px h-lg-45px">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--end::Logo-->
+                            <!--end::Brand-->
+                            <!--begin::Topbar-->
+                            <div class="d-flex align-items-center flex-shrink-0">
+                                <!--begin::User-->
+                                <div class="d-flex align-items-center ms-1" id="kt_header_user_menu_toggle">
+                                    <!--begin::User info-->
+                                    <div class="btn btn-flex align-items-center bg-hover-white bg-hover-opacity-10 py-2 px-2 px-md-3" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <!--begin::Name-->
+                                        <div class="d-none d-md-flex flex-column align-items-end justify-content-center me-2 me-md-4">
+                                            <a href="../Default.aspx" target="_blank"><span class="text-white fs-8 fw-bolder lh-1">Siteye Git</span></a>
+                                        </div>
+                                        <!--end::Name-->
+                                    </div>
+                                    <!--end::User info-->
+                                </div>
+                                <!--end::User -->
+                            </div>
+                            <!--end::Topbar-->
+                        </div>
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Content wrapper-->
+                    <!--begin::Aside-->
+                    <div id="kt_aside" class="aside card" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
+                        <!--begin::Aside menu-->
+                        <div class="aside-menu flex-column-fluid px-5">
+                            <!--begin::Aside Menu-->
+                            <div class="hover-scroll-overlay-y my-5 pe-4 me-n4" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_header, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu" data-kt-scroll-offset="{lg: '75px'}">
+                                <!--begin::Menu-->
+                                <div class="menu menu-column menu-rounded fw-bold fs-6" id="#kt_aside_menu" data-kt-menu="true">
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion show">
+                                        <a href="Default.aspx">
+                                            <img alt="Logo" src="images/Celbira.png" style="margin-left: 2rem;" width="200">
+                                        </a>
+                                        <span class="menu-link">
+                                            <span class="menu-icon">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                                                <span class="svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+                                                        <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                        <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                        <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                        <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <span class="menu-title">Dashboards</span>
+                                            <span class="menu-arrow"></span>
+                                        </span>
+                                        <div class="menu-sub menu-sub-accordion menu-active-bg ">
+
+                                            <div class="menu-item">
+                                                <a class="menu-link" href="hakkimizda.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Hakkimizda</span>
+                                                </a>
+                                            </div> 
+
+                                            <div class="menu-item">
+                                                <a class="menu-link" href="Slider.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Slider</span>
+                                                </a>
+                                            </div>
+
+                                             <div class="menu-item">
+                                                <a class="menu-link" href="SliderEkle.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">SliderEkle</span>
+                                                </a>
+                                            </div>
+                                            
+                                            <div class="menu-item">
+                                                <a class="menu-link" href="galeri.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Galeri</span>
+                                                </a>
+                                            </div>
+
+                                            <div class="menu-item">
+                                                <a class="menu-link" href="galeriekle.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Galeri Ekle</span>
+                                                </a>
+                                            </div>
+
+                                            
+
+                                           
+
+                                            <div class="menu-item">
+                                                <a class="menu-link" href="markalar.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">markalar</span>
+                                                </a>
+                                            </div>
+
+                                             
+                                         
+                                            
+                                            
+                                            <%--<div class="menu-item">
+                                                <a class="menu-link" href="Sempozyumlar.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Odalar</span>
+                                                </a>
+                                            </div>--%>
+                                            <%--<div class="menu-item">
+                                                <a class="menu-link" href="Sempozyumekle.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Oda Ekle</span>
+                                                </a>
+                                            </div>--%>
+                                            
+                                     <%--       <div class="menu-item">
+                                                <a class="menu-link" href="hizmetler.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Hizmetler</span>
+                                                </a>
+                                            </div>--%>
+                                           <%-- <div class="menu-item">
+                                                <a class="menu-link" href="hizmetlerekle.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">Hizmet Ekle</span>
+                                                </a>
+                                            </div>--%>
+                                           <div class="menu-item">
+                                                <a class="menu-link" href="Iletisim.aspx">
+                                                    <span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span>
+                                                    </span>
+                                                    <span class="menu-title">İletişim</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end::Menu-->
+                            </div>
+                        </div>
+                        <!--end::Aside menu-->
+                    </div>
+                    <!--end::Aside-->
+                    <!--begin::Container-->
+                    <!--end::Content wrapper-->
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!--begin::Footer-->
+                    <!--begin::Footer-->
+                    <div class="footer py-4 d-flex flex-column flex-md-row flex-stack" id="kt_footer">
+                        <!--begin::Copyright-->
+                        <div class="text-dark order-2 order-md-1">
+                            <span class="text-muted fw-bold me-1">2022©</span>
+                            <a href="https://wwww.tetratasarim.net" target="_blank" class="text-gray-800 text-hover-primary">Bu site TETRA E-Ticaret sistemleri ile hazırlanmıştır.</a>
+                        </div>
+                        <!--end::Copyright-->
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end::Footer-->
+            </div>
+        </div>
+
+        <!--end::Modals-->
+        <!--begin::Javascript-->
+        <script>var hostUrl = "/metronic8/demo14/assets/";</script>
+        <!--begin::Global Javascript Bundle(used by all pages)-->
+        <script src="assets/plugins/global/plugins.bundle.js"></script>
+        <script src="assets/js/scripts.bundle.js"></script>
+        <!--end::Global Javascript Bundle-->
+        <!--begin::Page Vendors Javascript(used by this page)-->
+        <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+        <script src="assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
+        <!--end::Page Vendors Javascript-->
+        <!--begin::Page Custom Javascript(used by this page)-->
+        <script src="assets/js/widgets.bundle.js"></script>
+        <script src="assets/js/custom/widgets.js"></script>
+        <script src="assets/js/custom/apps/chat/chat.js"></script>
+        <script src="assets/js/custom/intro.js"></script>
+        <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+        <!--end::Page Custom Javascript-->
+        <!--end::Javascript-->
+        </div>
+    </form>
+</body>
+</html>
